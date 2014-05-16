@@ -1,0 +1,7 @@
+#name : add test
+# --
+,
+{"${4:description}",
+fun() ->
+${0: ?assert(false)}
+end}

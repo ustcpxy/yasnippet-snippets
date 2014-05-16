@@ -1,0 +1,12 @@
+#name : {foreach, Where, Setup, Cleanup, [Tests | Instantiator]}
+# --
+$1_test_() ->
+{foreach,
+${2:spawn},
+fun() -> ${3:ok} end,
+fun(_) -> ${4:ok} end,
+[{"${5: test $1."},
+fun() ->
+${0:?assert(false)}
+end}
+]}.

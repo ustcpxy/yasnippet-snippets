@@ -1,0 +1,11 @@
+#name : {foreach, Setup, Cleanup, [Tests | Instantiator]}
+# --
+$1_test_() ->
+{foreach,
+fun() -> ${2:ok} end,
+fun(_) -> ${3:ok} end,
+[{"${4:description}",
+fun() ->
+${0:?assert(false)}
+end}
+]}.
