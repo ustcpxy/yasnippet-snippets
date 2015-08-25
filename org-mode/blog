@@ -1,13 +1,26 @@
-# -*- mode: snippet -*-
+# -*- mode: snippet; require-final-newline: nil -*-
 # name: blog
 # key: blog
+# binding: direct-keybinding
 # --
 #+STARTUP: showall indent
 #+STARTUP: hidestars
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
 #+BEGIN_HTML
+title: $1
+date: `(format-time-string "%Y-%m-%d %H:%M:%S")`
+category: $2
+description: $3
+tags: [$4]
+toc: true
 ---
-layout: default
-title: ${1:title}
-excerpt: ${2:excerpt}
----
+#+END_HTML
+
+$5
+
+#+BEGIN_HTML
+<!-- more -->
+#+END_HTML
+
 $0
